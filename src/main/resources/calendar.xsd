@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://edms.com/calendar" xmlns:tns="http://edms.com/calendar"
+	elementFormDefault="qualified">
+	<xs:element name="createCalendarRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CalID" type="xs:string" />
+				<xs:element name="CalColor" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+		<xs:element name="createCalendarResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="response" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="createEventRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="summary" type="xs:string" />
+				<xs:element name="location" type="xs:string" />
+				<xs:element name="calendar" type="xs:string" />
+				<xs:element name="startdate" type="xs:string" />
+				<xs:element name="enddate" type="xs:string" />
+				<xs:element name="description" type="xs:string" />
+				<xs:element name="allday" type="xs:string" />
+							</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="createEventResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="response" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
