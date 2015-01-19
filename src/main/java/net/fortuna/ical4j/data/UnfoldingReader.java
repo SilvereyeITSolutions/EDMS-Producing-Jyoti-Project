@@ -177,13 +177,16 @@ public class UnfoldingReader extends PushbackReader {
         final int read = super.read(cbuf, off, len);
         boolean doUnfold = false;
         for (int i = 0; i < patterns.length; i++) {
-            if (read > 0 && cbuf[0] == patterns[i][0]) {
+            if (read > 0 && cbuf[0] == patterns[i][0] ) {
                 doUnfold = true;
                 break;
             }
             else {
                 for (int j = 0; j < read; j++) {
-                    if (cbuf[j] == patterns[i][0]) {
+                    System.out.println((cbuf[j] == patterns[i][0] && cbuf[j] == patterns[i][1]) +" at j= "+j);
+                	
+                	if (cbuf[j] == patterns[i][0] ) {
+                    	System.out.println("unread(cbuf,j,read-j) = "+"unread("+cbuf.length+","+j+","+(read-j)+") where read = "+read);
                         unread(cbuf, j, read - j);
                         return j;
                     }
